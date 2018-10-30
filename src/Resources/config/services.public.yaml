@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    public: true
+
+  json_rpc_http_server_swagger_doc.provider:
+    class: Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Provider\DocProvider
+    arguments:
+      - '@event_dispatcher'
+      - '@json_rpc_http_server_doc.creator.http_server'
+      - '@json_rpc_http_server_swagger_doc_sdk.normalizer.doc'
+    tags: ['json_rpc_server_doc.doc_provider']
