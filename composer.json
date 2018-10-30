@@ -2,6 +2,7 @@
     "name": "yoanm/symfony-jsonrpc-http-server-swagger-doc",
     "description": "Symfony bundle for easy JSON-RPC server Swagger 2.0 documentation",
     "license": "MIT",
+    "minimum-stability": "dev",
     "type": "library",
     "support": {
         "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-swagger-doc/issues"
@@ -25,10 +26,10 @@
         }
     },
     "require": {
-        "php": ">=5.5",
-        "yoanm/jsonrpc-server-doc-sdk": "dev-feature/improve",
-        "yoanm/jsonrpc-http-server-swagger-doc-sdk": "dev-feature/improve",
-        "yoanm/symfony-jsonrpc-http-server-doc": "dev-feature/improve",
+        "php": ">=7.1",
+        "yoanm/jsonrpc-server-doc-sdk": "dev-release/1.0.0",
+        "yoanm/jsonrpc-http-server-swagger-doc-sdk": "dev-release/1.0.0",
+        "yoanm/symfony-jsonrpc-http-server-doc": "dev-release/0.1.0",
         "symfony/http-foundation": "^3.0 || ^4.0",
         "symfony/http-kernel": "^3.0 || ^4.0",
         "symfony/config": "^3.0 || ^4.0",
