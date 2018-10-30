@@ -29,7 +29,7 @@ class SwaggerDocCreatedEvent extends DocEvent
     }
 
     /**
-     * @return HttpServerDoc
+     * @return array
      */
     public function getSwaggerDoc()
     {
