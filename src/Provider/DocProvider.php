@@ -2,7 +2,7 @@
 namespace Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Provider;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Yoanm\JsonRpcHttpServerSwaggerDoc\Normalizer\DocNormalizer;
+use Yoanm\JsonRpcHttpServerSwaggerDoc\Infra\Normalizer\DocNormalizer;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Creator\HttpServerDocCreator;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Provider\DocProviderInterface;
 use Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Event\SwaggerDocCreatedEvent;

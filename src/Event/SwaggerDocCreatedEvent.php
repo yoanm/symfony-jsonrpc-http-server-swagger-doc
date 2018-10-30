@@ -1,7 +1,7 @@
 <?php
 namespace Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Event;
 
-use Yoanm\JsonRpcServerDoc\Model\HttpServerDoc;
+use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\Event\DocEvent;
 
 /**
@@ -17,11 +17,13 @@ class SwaggerDocCreatedEvent extends DocEvent
     private $serverDoc;
 
     /**
-     * @param array                     $swaggerDoc
+     * @param array              $swaggerDoc
      * @param HttpServerDoc|null $serverDoc
      */
-    public function __construct(array $swaggerDoc, HttpServerDoc $serverDoc = null)
-    {
+    public function __construct(
+        array $swaggerDoc,
+        HttpServerDoc $serverDoc = null
+    ) {
         $this->swaggerDoc = $swaggerDoc;
         $this->serverDoc = $serverDoc;
     }
