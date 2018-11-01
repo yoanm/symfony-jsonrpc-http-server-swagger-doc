@@ -39,7 +39,7 @@ class DocProvider implements DocProviderInterface
      *
      * @return array
      */
-    public function getDoc($host = null)
+    public function getDoc($host = null) : array
     {
         $rawDoc = $this->serverDocCreator->create($host);
         $swaggerDoc = $this->docNormalizer->normalize($rawDoc);
@@ -53,7 +53,7 @@ class DocProvider implements DocProviderInterface
     /**
      * {@inheritdoc}
      */
-    public function supports($filename, $host = null)
+    public function supports($filename, $host = null) : bool
     {
         return 'swagger.json' === $filename;
     }
