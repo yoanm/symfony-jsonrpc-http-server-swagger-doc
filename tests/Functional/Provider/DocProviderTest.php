@@ -96,7 +96,7 @@ class DocProviderTest extends TestCase
         $this->provider->getDoc($host);
     }
 
-    public function testShouldSupportOpenJsonFile()
+    public function testShouldSupportSwaggerJsonFile()
     {
         $filename = 'swagger.json';
         $this->assertTrue($this->provider->supports($filename));
