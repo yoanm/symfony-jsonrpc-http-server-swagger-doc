@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    public: true
+
+  # Normalizer
+  json_rpc_http_server_swagger_doc_sdk.normalizer.doc:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\Infra\Normalizer\DocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.external_schema_list'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.operation'

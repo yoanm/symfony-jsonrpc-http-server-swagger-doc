@@ -22,7 +22,8 @@
   "autoload-dev": {
     "psr-4": {
       "Tests\\": "tests",
-      "Tests\\Functional\\BehatContext\\": "features/bootstrap"
+      "Tests\\Functional\\BehatContext\\": "features/bootstrap",
+      "DemoApp\\": "features/demo_app/src"
     }
   },
   "require": {
@@ -30,9 +31,7 @@
     "yoanm/jsonrpc-server-doc-sdk": "dev-release/1.0.0",
     "yoanm/jsonrpc-http-server-swagger-doc-sdk": "dev-release/1.0.0",
     "yoanm/symfony-jsonrpc-http-server-doc": "dev-release/0.1.0",
-    "symfony/http-foundation": "^3.0 || ^4.0",
     "symfony/http-kernel": "^3.0 || ^4.0",
-    "symfony/config": "^3.0 || ^4.0",
     "symfony/dependency-injection": "^3.0 || ^4.0"
   },
   "require-dev": {
@@ -41,7 +40,7 @@
     "phpunit/phpunit": "^6.0 || ^7.0",
     "matthiasnoback/symfony-dependency-injection-test": "^2.0 || ^3.0",
     "matthiasnoback/symfony-config-test": "^3.0 || ^4.0",
-    "symfony/framework-bundle": "^3.4",
+    "symfony/framework-bundle": "^3.0 || ^4.0",
     "yoanm/php-unit-extended": "~1.0"
   }
 }

@@ -1,0 +1,50 @@
+services:
+  _defaults:
+    public: false
+
+
+  # Def resolver
+  json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Resolver\DefinitionRefResolver
+
+  ## Components
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.shape:
+      class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ShapeNormalizer
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.schema_type:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\SchemaTypeNormalizer
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.result_doc:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ResultDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref'
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.type:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\TypeDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.schema_type'
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.error:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ErrorDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.type'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.external_schema_list:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ExternalSchemaListDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.type'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.error'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.request:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\RequestDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.response:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ResponseDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.shape'
+  json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.operation:
+    class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\OperationDocNormalizer
+    arguments:
+     - '@json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.request'
+     - '@json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.response'
