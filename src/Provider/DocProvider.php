@@ -35,9 +35,11 @@ class DocProvider implements DocProviderInterface
     }
 
     /**
-     * @param string|null $host
+     * @param null $host
      *
      * @return array
+     *
+     * @throws \ReflectionException
      */
     public function getDoc($host = null) : array
     {

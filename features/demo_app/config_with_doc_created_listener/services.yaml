@@ -9,7 +9,7 @@ services:
   # Alias resolver mock to bundle resolver
   json_rpc_http_server.alias.method_resolver: '@resolver'
 
-  # MethodDocCreated Listener
+  # DocCreated Listener
   method_doc_created.listener:
     class: DemoApp\Listener\DocCreatedListener
     tags:
