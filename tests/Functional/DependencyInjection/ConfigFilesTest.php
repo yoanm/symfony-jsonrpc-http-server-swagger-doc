@@ -7,7 +7,10 @@ use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ExternalSchemaLis
 use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\OperationDocNormalizer;
 use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\RequestDocNormalizer;
 use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ResponseDocNormalizer;
+use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ResultDocNormalizer;
+use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\SchemaTypeNormalizer;
 use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\ShapeNormalizer;
+use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Normalizer\Component\TypeDocNormalizer;
 use Yoanm\JsonRpcHttpServerSwaggerDoc\App\Resolver\DefinitionRefResolver;
 use Yoanm\JsonRpcHttpServerSwaggerDoc\Infra\Normalizer\DocNormalizer;
 use Yoanm\SymfonyJsonRpcHttpServerDoc\DependencyInjection\JsonRpcHttpServerDocExtension;
@@ -75,14 +78,24 @@ class ConfigFilesTest extends AbstractTestClass
                 'serviceClassName' => DefinitionRefResolver::class,
                 'public' => false,
             ],
-            'SDK - APP - DocNormalizer' => [
-                'serviceId' => 'json_rpc_http_server_swagger_doc_sdk.normalizer.doc',
-                'serviceClassName' => DocNormalizer::class,
-                'public' => false,
-            ],
             'SDK - APP - ShapeNormalizer' => [
                 'serviceId' => 'json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.shape',
                 'serviceClassName' => ShapeNormalizer::class,
+                'public' => false,
+            ],
+            'SDK - APP - SchemaTypeNormalizer' => [
+                'serviceId' => 'json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.schema_type',
+                'serviceClassName' => SchemaTypeNormalizer::class,
+                'public' => false,
+            ],
+            'SDK - APP - ResultDocNormalizer' => [
+                'serviceId' => 'json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.result_doc',
+                'serviceClassName' => ResultDocNormalizer::class,
+                'public' => false,
+            ],
+            'SDK - APP - TypeDocNormalizer' => [
+                'serviceId' => 'json_rpc_http_server_swagger_doc_sdk.app.normalizer.component.type',
+                'serviceClassName' => TypeDocNormalizer::class,
                 'public' => false,
             ],
             'SDK - APP - ErrorDocNormalizer' => [

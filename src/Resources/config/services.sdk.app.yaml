@@ -2,7 +2,6 @@ services:
   _defaults:
     public: false
 
-
   # Def resolver
   json_rpc_http_server_swagger_doc_sdk.resolver.definition_ref:
     class: Yoanm\JsonRpcHttpServerSwaggerDoc\App\Resolver\DefinitionRefResolver

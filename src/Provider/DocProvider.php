@@ -35,7 +35,7 @@ class DocProvider implements DocProviderInterface
     }
 
     /**
-     * @param null $host
+     * @param string|null $host
      *
      * @return array
      *
