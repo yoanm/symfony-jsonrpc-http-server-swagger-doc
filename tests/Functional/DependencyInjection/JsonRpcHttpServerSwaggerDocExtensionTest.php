@@ -11,7 +11,7 @@ class JsonRpcHttpServerSwaggerDocExtensionTest extends AbstractTestClass
 {
     public function testShouldBeLoadable()
     {
-        $this->load();
+        $this->loadContainer();
 
         $this->assertDocProviderIsLoadable();
     }

@@ -19,7 +19,7 @@ class SwaggerDocCreatedEventTest extends TestCase
     /** @var HttpServerDoc|ObjectProphecy */
     private $serverDoc;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->swaggerDoc = ['swaggerDoc'];
         $this->serverDoc = $this->prophesize(HttpServerDoc::class);
