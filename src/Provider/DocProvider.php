@@ -47,7 +47,7 @@ class DocProvider implements DocProviderInterface
         $swaggerDoc = $this->docNormalizer->normalize($rawDoc);
 
         $event = new SwaggerDocCreatedEvent($swaggerDoc, $rawDoc);
-        $this->dispatcher->dispatch($event::EVENT_NAME, $event);
+        $this->dispatcher->dispatch($event, $event::EVENT_NAME);
 
         return $event->getSwaggerDoc();
     }
