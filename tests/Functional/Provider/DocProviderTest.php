@@ -57,6 +57,14 @@ class DocProviderTest extends TestCase
             ->shouldBeCalled()
         ;
 
+        $this->dispatcher
+            ->dispatch(
+                Argument::type(SwaggerDocCreatedEvent::class),
+                SwaggerDocCreatedEvent::EVENT_NAME
+            )
+            ->shouldBeCalled()
+        ;
+
         $this->assertSame(
             $normalizedDoc,
             $this->provider->getDoc($host)
@@ -83,12 +91,12 @@ class DocProviderTest extends TestCase
 
         $this->dispatcher
             ->dispatch(
-                SwaggerDocCreatedEvent::EVENT_NAME,
                 Argument::allOf(
                     Argument::type(SwaggerDocCreatedEvent::class),
                     Argument::which('getSwaggerDoc', $normalizedDoc),
                     Argument::which('getServerDoc', $rawDoc->reveal())
-                )
+                ),
+                SwaggerDocCreatedEvent::EVENT_NAME
             )
             ->shouldBeCalled()
         ;
