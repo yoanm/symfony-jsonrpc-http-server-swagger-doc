@@ -1,7 +1,8 @@
 <?php
-namespace Tests\Functional\Endpoint;
+namespace Tests\Functional\Event;
 
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Yoanm\JsonRpcServerDoc\Domain\Model\HttpServerDoc;
 use Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Event\SwaggerDocCreatedEvent;
@@ -11,6 +12,8 @@ use Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Event\SwaggerDocCreatedEvent;
  */
 class SwaggerDocCreatedEventTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var SwaggerDocCreatedEvent */
     private $event;
 

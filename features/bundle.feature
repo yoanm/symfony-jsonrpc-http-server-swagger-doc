@@ -166,7 +166,16 @@ Feature: demo symfony application
               "required": ["code"],
               "properties": {
                 "code": {"example": -32603},
-                "data": {"type": "object", "x-nullable": true, "properties": {"previous": {"description": "Previous error message", "type": "string", "x-nullable": true}}}
+                "data": {
+                  "type": "object",
+                  "x-nullable": true,
+                  "properties": {
+                    "_class": {"description": "Exception class", "type": "string", "x-nullable": true},
+                    "_code":{"description": "Exception code", "type": "integer", "x-nullable": true},
+                    "_message":{"description": "Exception message", "type": "string", "x-nullable": true},
+                    "_trace":{"description": "PHP stack trace", "type": "array", "x-nullable": true, "items":{"type": "string"}}
+                  }
+                }
               }
             }
           ]
@@ -252,7 +261,16 @@ Feature: demo symfony application
               "required": ["code"],
               "properties": {
                 "code": {"example": -32603},
-                "data": {"type": "object", "x-nullable": true, "properties": {"previous": {"description": "Previous error message", "type": "string", "x-nullable": true}}}
+                "data": {
+                  "type": "object",
+                  "x-nullable": true,
+                  "properties": {
+                    "_class": {"description": "Exception class", "type": "string", "x-nullable": true},
+                    "_code":{"description": "Exception code", "type": "integer", "x-nullable": true},
+                    "_message":{"description": "Exception message", "type": "string", "x-nullable": true},
+                    "_trace":{"description": "PHP stack trace", "type": "array", "x-nullable": true, "items":{"type": "string"}}
+                  }
+                }
               }
             }
           ]
