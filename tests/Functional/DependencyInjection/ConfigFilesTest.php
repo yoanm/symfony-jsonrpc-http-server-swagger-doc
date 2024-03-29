@@ -19,6 +19,7 @@ use Yoanm\SymfonyJsonRpcHttpServerSwaggerDoc\Provider\DocProvider;
 /**
  * /!\ This test class does not cover JsonRpcHttpServerDocExtension, it covers yaml configuration files
  * => So no [at]covers tag !
+ * @coversNothing
  */
 class ConfigFilesTest extends AbstractTestClass
 {
