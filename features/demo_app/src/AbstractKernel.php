@@ -35,7 +35,12 @@ abstract class AbstractKernel extends BaseHttpKernel
     {
         // Use a specific cache for each kernels
         if (null === $this->customCacheDir) {
-            $this->customCacheDir = $this->getProjectDir().'/var/cache/'.$this->environment.'/'.$this->getConfigDirectoryName();
+            $this->customCacheDir = sprintf(
+                '%s/var/cache/%s/%s',
+                $this->getProjectDir(),
+                $this->environment,
+                $this->getConfigDirectoryName()
+            );
         }
 
         return $this->customCacheDir;
