@@ -3,7 +3,8 @@ build
 #A library must not provide a composer.lock file
 composer.lock
 
-features/demo_app/var
+# Demo app excluded dirs
+features/demo_app/var/
 
 #Phpunit
 .phpunit.result.cache
