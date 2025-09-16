@@ -2,7 +2,7 @@
   "name": "yoanm/symfony-jsonrpc-http-server-swagger-doc",
   "description": "Symfony bundle for easy JSON-RPC server Swagger 2.0 documentation",
   "license": "MIT",
-  "type": "library",
+  "type": "symfony-bundle",
   "support": {
     "issues": "https://github.com/yoanm/symfony-jsonrpc-http-server-swagger-doc/issues"
   },
